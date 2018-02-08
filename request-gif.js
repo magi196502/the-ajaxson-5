@@ -40,16 +40,17 @@ function fetchAndDisplayGif(event) {
 //          console.log("we received a response!");
             //console.log(response);
             var imgSrc = response["data"]["image_url"]; 
-//          console.log(imgSrc);
+            console.log(imgSrc);
 
             // TODO
             // 1. set the source attribute of our image to the image_url of the GIF
             // 2. hide the feedback message and display the image
-//          console.log("Parsing the response");
+
+            $("img#gif:hidden").show();
+            $("img#gif").attr('src',imgSrc);
 
             $("#feedback").text("");
             setGifLoadedStatus(false);
-            
 
         },
         error: function() {
