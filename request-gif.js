@@ -37,22 +37,18 @@ function fetchAndDisplayGif(event) {
             // if the response comes back successfully, the code in here will execute.
             
             // jQuery passes us the `response` variable, a regular javascript object created from the JSON the server gave us
-            console.log("we received a response!");
-            console.log(response);
-                        
-            console.log("Response data " + response.data);
+//          console.log("we received a response!");
+            //console.log(response);
+            var imgSrc = response["data"]["image_url"]; 
+//          console.log(imgSrc);
+
             // TODO
             // 1. set the source attribute of our image to the image_url of the GIF
             // 2. hide the feedback message and display the image
-            console.log("Parsing the response");
+//          console.log("Parsing the response");
+
             $("#feedback").text("");
             setGifLoadedStatus(false);
-
-//          console.log("Response data " +  response.data("image_url"));
-            for (var element in response){
-                console.log("The data is" + element);
-            }
-
             
 
         },
