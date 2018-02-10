@@ -22,6 +22,19 @@ function fetchAndDisplayGif(event) {
     
     // get the user's input text from the DOM
     var searchQuery = $("input[name='tag']").val(); // TODO should be e.g. "dance"
+    var numJacksons = $("input[name='botcheck']").val();
+    var botMsg = "";                                // Define the bot message
+
+    // Ensure that there is a value in both fields and the bot check field
+    // is valid
+    if ((numJacksons != 5) || (searchQuery == "")) {
+
+        // Set the bot check error message and display
+        botMsg = "No gifs for you!"
+        $("#feedback").text(botMsg);
+        setGifLoadedStatus(false);
+        return;                                     // Return to prevent further execution
+    }
 
     // configure a few parameters to attach to our request
     var params = { 
@@ -38,24 +51,20 @@ function fetchAndDisplayGif(event) {
             
             // jQuery passes us the `response` variable, a regular javascript object created from the JSON the server gave us
 //          console.log("we received a response!");
-            //console.log(response);
-            var imgSrc = response["data"]["image_url"]; 
-            console.log(imgSrc);
+//          console.log(response);
+
+            var imgSrc = response.data.image_url;
 
             // TODO
             // 1. set the source attribute of our image to the image_url of the GIF
             // 2. hide the feedback message and display the image
-
-            $("img#gif:hidden").show();
-            $("img#gif").attr('src',imgSrc);
-
+            $("#gif").attr('src',imgSrc);
+            setGifLoadedStatus(true);
             $("#feedback").text("");
-            setGifLoadedStatus(false);
 
         },
         error: function() {
             // if something went wrong, the code in here will execute instead of the success function
-            
             // give the user an error message
             $("#feedback").text("Sorry, could not load GIF. Try again!");
             setGifLoadedStatus(false);
@@ -65,7 +74,7 @@ function fetchAndDisplayGif(event) {
     // TODO
     // give the user a "Loading..." message while they wait
     $("#feedback").text("Your image is loading...");
-    setGifLoadedStatus(false);
+    setGifLoadedStatus(false);    
 }
 
 

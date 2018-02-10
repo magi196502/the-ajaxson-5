@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The AJAXson 5</title>
+   
+    <!-- Bootstrap files -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="request-gif.js"></script>
+
 </head>
 <body>
     <h1>The AJAXson 5</h1>
 
     <form id="form-gif-request" />
         <label>What kind of Jackson 5 related gif do you want?</label>
-        <input name="tag" type="text"/>
+        <input name="tag" type="text"/><br>
+        <label>Prove you are not a robot by answerig the following riddle:</label><br>
+        <input name="botcheck" type="text"/><label>Jacksons are better than 1.</label><br>
         <input type="submit" value="Get my Gif!" />
     </form>
 
