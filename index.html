@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +12,84 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+    <style>
+        body{
+            background-color: gainsboro;
+        }
+
+    .center_form{
+        margin: 10px;
+        width:80% /* value of your choice which suits your alignment */
+    }
+
+
+
+        form {
+            width: 80%;
+            margin: 1px;
+            padding: 5px;
+            border-color: black;
+        }
+
+        label{
+            margin: 5px 0px 0px 20px;
+            border-color: darkslategrey;            
+            padding: 5px 0px 0px 5px;
+/*            width: 80%; */
+        }
+
+        text {
+            margin: 5px 0px 0px 100px;
+            border-color: darkslategrey;            
+            padding: 5px 0px 0px 100px;
+            width: 80%;
+
+        }
+        /*
+        .container {
+            display: flex; 
+            flex-direction: column;
+            flex-wrap: wrap;
+        }  
+        */      
+        .error-message{
+            color: red;
+        }
+        
+        h1 {
+            margin: 25px;
+            border-color: darkslategrey;            
+            padding: 20px;
+            width: 80%;
+            border-color: darkslategrey;
+            border-width: 25px;
+            border-style:outset;
+        }
+        
+        .bottom_label{
+            margin: 5px 0px 0px 15px;
+            border-color: darkslategrey;            
+            padding: 5px 0px 0px 5px;
+            width: 100%;   
+        }
+
+        .tag {
+            width: 85%;
+            margin: 0px 0px 0px 20px;
+            padding: 0px 0px 0px 20px;
+        }
+
+        .botcheck {
+            width: 35%;
+            margin: 0px 0px 0px 20px;
+            padding: 0px 0px 0px 20px;
+        }
+        /*
+        .top_label {
+            width: 80%;
+        }
+        */
+    </style>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -20,18 +98,44 @@
 
 </head>
 <body>
-    <h1>The AJAXson 5</h1>
+    <div class="container center_form">
+        <div class="row">
+            <div class="col-md-12 center-block">
+                <h1 class="text-center">The AJAXson 5</h1>
+            </div>
+        </div>
+        <form id="form-gif-request" />
+            <div class="row">
+                <div class="col-md-12 center-block" >
+                    <label class="text-center">What kind of Jackson 5 related gif do you want?</label>
+                </div>        
+            </div>
+            <div class="row">
+                <div class="col-md-12 center-block">
+                    <input class="tag" name="tag" type="text"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="bottom_label">Prove you are not a robot by answerig the following riddle:</label>
+                </div>            
+            </div>
 
-    <form id="form-gif-request" />
-        <label>What kind of Jackson 5 related gif do you want?</label>
-        <input name="tag" type="text"/><br>
-        <label>Prove you are not a robot by answerig the following riddle:</label><br>
-        <input name="botcheck" type="text"/><label>Jacksons are better than 1.</label><br>
-        <input type="submit" value="Get my Gif!" />
-    </form>
 
+            <input name="botcheck" class="botcheck" type="text"/><label>Jacksons are better than 1.</label><br>
+            <div class="row">
+                <input type="submit" class="btn btn-primary" value="Get my Gif!" />
+            </div>
+
+            <label class="error-message"></label>
+
+        </form>
+    </div>
+    
     <img id="gif" src="" hidden="true"/>
     <p id="feedback" hidden="true`"></p>
+
+    </div>
 
 </body>
 </html>

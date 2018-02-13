@@ -31,9 +31,13 @@ function fetchAndDisplayGif(event) {
 
         // Set the bot check error message and display
         botMsg = "No gifs for you!"
-        $("#feedback").text(botMsg);
-        setGifLoadedStatus(false);
+//      $("#feedback").text(botMsg);
+
+        displayError(botMsg)
+//      setGifLoadedStatus(false);
         return;                                     // Return to prevent further execution
+    } else {
+        clearError("");
     }
 
     // configure a few parameters to attach to our request
@@ -86,4 +90,23 @@ function fetchAndDisplayGif(event) {
 function setGifLoadedStatus(isCurrentlyLoaded) {
     $("#gif").attr("hidden", !isCurrentlyLoaded);
     $("#feedback").attr("hidden", isCurrentlyLoaded);
+}
+
+/*
+ * clearError
+ *
+ * Undisplays the error message and removes the red CSS style
+ */
+function clearError(message) {
+    $(".error-message").text("");
+}
+
+/**
+ * displayError
+ *
+ * Displays an error message on the text input, and colors it red
+ */
+function displayError(message) {
+    $(".error-message").text(message);
+
 }
